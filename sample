@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aravind A - Resume</title>
+  <!-- Using a similar font stack and variables inspired by the Ali Abdaal site -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Recoleta&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #5DCDF1;
+      --secondary-color: #FD976D;
+      --foreground-color: #1B1624;
+      --background-color: #FFFFFF;
+      --heading-font: 'Recoleta', serif;
+      --body-font: 'Poppins', sans-serif;
+      --nav-link-color: #ffcc00;
+    }
+    
+    /* Reset & Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--body-font);
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 120px; /* Space for fixed header */
+    }
+    
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    /* Header Styles */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    }
+    
+    .profile-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--nav-link-color);
+      box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.7);
+      margin-right: 20px;
+    }
+    
+    .profile-info h1 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+    
+    .profile-info h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 5px;
+    }
+    
+    .profile-info p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    
+    nav a {
+      margin: 0 15px;
+      font-size: 1.1rem;
+      color: var(--nav-link-color);
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+    
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0px 0px 10px var(--nav-link-color);
+    }
+    
+    /* Section Styles */
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 0.6s ease-in-out;
+    }
+    
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    section h2 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary-color);
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    section p,
+    section ul {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    
+    section ul {
+      list-style: inside;
+      text-align: left;
+    }
+    
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 9999px;
+      background-color: var(--primary-color);
+      color: var(--foreground-color);
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.3s;
+      text-decoration: none;
+      margin: 10px 5px;
+    }
+    
+    .btn:hover {
+      background-color: var(--secondary-color);
+      transform: scale(1.05);
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .profile-container {
+        margin-bottom: 10px;
+      }
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        margin: 10px;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="profile-container">
+      <img src="1742303077029.jpeg" alt="Profile Picture" class="profile-pic" />
+      <div class="profile-info">
+        <h1>Aravind A</h1>
+        <h2>Senior Business Development Manager (B2B SaaS)</h2>
+        <p>Bangalore, Karnataka | <a href="mailto:Aravindanandan96@gmail.com">Aravindanandan96@gmail.com</a> | +91-85553107079</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Resume Sections -->
+  <section id="about">
+    <h2>Professional Summary</h2>
+    <p>Dynamic sales professional with 5+ years of experience in B2B SaaS sales, specializing in managing complex sales cycles, engaging C-level executives, and achieving revenue growth.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+  
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <article>
+      <h3>Senior Business Development Manager | Simplotel Technologies Pvt. Ltd (Apr 2024 - Present)</h3>
+      <ul>
+        <li>Drove digital transformation across South India, Indonesia, Malaysia, and Cambodia.</li>
+        <li>Achieved 25% revenue growth and exceeded quotas by 116%-137%.</li>
+      </ul>
+    </article>
+    <article>
+      <h3>Business Development Manager | Simplotel Technologies Pvt. Ltd (Jan 2023 – Mar 2024)</h3>
+      <ul>
+        <li>Streamlined SaaS adoption and improved hybrid work environments.</li>
+        <li>Conducted workshops and presentations on SaaS productivity solutions.</li>
+      </ul>
+    </article>
+  </section>
+  
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>MBA – IT & Fintech (2022 – 2024), Manipal University Jaipur</li>
+      <li>B.E - Mechanical Engineering (2014 – 2018), HKBK College of Engineering</li>
+    </ul>
+  </section>
+  
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Strategic prospecting, lead qualification, and consultative selling</li>
+      <li>CRM tools: HubSpot, Zoho, Salesforce</li>
+      <li>AI-based solutions: Microsoft Power BI, AWS</li>
+      <li>International market experience (US, APAC)</li>
+    </ul>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Connect with me on <a href="http://www.linkedin.com/in/aravindanandan96/">LinkedIn</a> or <a href="http://github.com/AravindAnandan96">GitHub</a>.</p>
+    <a href="mailto:Aravindanandan96@gmail.com" class="btn">Email Me</a>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Aravind A. All rights reserved.</p>
+  </footer>
+</body>
+</html>
